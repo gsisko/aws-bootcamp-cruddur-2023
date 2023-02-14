@@ -2,9 +2,6 @@
 title: Journal Week 0
 updated: 2023-02-14 01:23:29Z
 created: 2023-02-13 04:11:19Z
-latitude: 33.44837710
-longitude: -112.07403730
-altitude: 0.0000
 ---
 
 # AWS Free cloud Bootcamp Journal - Week 0
