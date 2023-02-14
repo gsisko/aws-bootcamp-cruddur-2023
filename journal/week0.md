@@ -33,7 +33,7 @@ I also think that there is a key need to outline how we are enforcing the "ephem
 
 ## Logical Diagram
 
-*[Chart Link](https://lucid.app/lucidchart/aa9920f6-bbe5-418d-9f24-4fc180daf472/edit?view_items=rHMwQI5nZLgA%2CrHMwvbxS4hvG%2CrHMw365rg.9K%2CrHMwFA5Owkko%2CrHMwnpTpCLF8%2CrHMwdHx33ru6%2CrHMwQs7lZg3e%2CrHMw8Vv2AuCe%2CrHMwjsCTMXNT%2CrHMwyxQ4Y3-t%2CrHMwLWZlhb8z%2CrHMwawC0Bm.C%2CrHMwPgLieSnO%2CrHMwSW4fYPv2%2CrHMwE0PE.0hA%2CrHMwLPZAGXJz%2CrHMw_RvUCKie%2CrHMwW.BD62a6%2CrHMwP.DkAFs6%2CrHMwvKSUxZDN%2CrHMwB7w1a0vy%2CrHMwM4zoHnHr%2CrHMwgPGWV5OT%2CrHMwscgkKenf%2CrHMwXDaay92C%2CrHMwh6HtS-3m&invitationId=inv_f70217bb-22d9-493b-8f7d-cad947fe1759)*
+*[Chart Link](https://lucid.app/lucidchart/ca9dcfe4-17f6-42b7-b1d3-dee51a7a3d87/edit?invitationId=inv_472672f0-fcea-4e28-a089-da52484d2a9e)*
 
 ![6ffb110db4eefb30ff9872cb49644643.png](../_resources/6ffb110db4eefb30ff9872cb49644643.png)
 
