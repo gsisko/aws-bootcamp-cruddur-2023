@@ -85,6 +85,14 @@ I also went ahead and created a well architected workload for cruddur. Generally
 
 ![8ca7d75f774e125674725d5a44ee1e6a.png](../_resources/8ca7d75f774e125674725d5a44ee1e6a.png)
 
+
+## Course setup - Gitpod, AWS CLI, 
+
+After reading through some of the discord, it look like there is a strong preference for having the gitpod environment up and running. I just want to point whoever is grading this to the `.gitpod.yml` and the aws json settings I ended up configuring to use. I do have gitpod up and running with the AWS CLI.
+
+I also redid a lot of the topic subscription and alarm creation with the `aws sns` and `aws budgets` cli commands.
+
+
 ## Conclusion
 
 Well, that's it for week 0! Thanks to the organizers and guest lecturers for walking everyone through these things for free, plus also for all the work that clearly went into the roleplay scenario planning. I'm really looking forward to next week, since I love containers and docker.
