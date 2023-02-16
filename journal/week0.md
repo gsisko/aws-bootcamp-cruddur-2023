@@ -93,6 +93,72 @@ After reading through some of the discord, it look like there is a strong prefer
 I also redid a lot of the topic subscription and alarm creation with the `aws sns` and `aws budgets` cli commands.
 
 
+## Code reference
+
+I am putting some of my setup in the journal for the conveinience of the graders. You can also find them in my repository.
+
+### gitpod.yml:
+``` 
+
+vscode:
+  extensions:
+    - 42Crunch.vscode-openapi
+
+tasks:
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
+```
+
+I haven't done a deep dive yet on customising my gitpod instance, but be on the look out for that in future weeks. 
+
+### budget-notification json example
+```
+{
+  "AlarmName": "DailyEstimatedCharges",
+  "AlarmDescription": "This alarm would be triggered if the daily estimated charges exceeds 1$",
+  "ActionsEnabled": true,
+  "AlarmActions": [
+      "arn:aws:sns:${Region}:${Account}:billing_topic"
+  ],
+  "EvaluationPeriods": 1,
+  "DatapointsToAlarm": 1,
+  "Threshold": 1,
+  "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+  "TreatMissingData": "breaching",
+  "Metrics": [{
+      "Id": "m1",
+      "MetricStat": {
+          "Metric": {
+              "Namespace": "AWS/Billing",
+              "MetricName": "EstimatedCharges",
+              "Dimensions": [{
+                  "Name": "Currency",
+                  "Value": "USD"
+              }]
+          },
+          "Period": 86400,
+          "Stat": "Maximum"
+      },
+      "ReturnData": false
+  },
+  {
+      "Id": "e1",
+      "Expression": "IF(RATE(m1)>0,RATE(m1)*86400,0)",
+      "Label": "DailyEstimatedCharges",
+      "ReturnData": true
+  }]
+}
+```
+
+Pretty much verbatim from Andrew's example. 
+
 ## Conclusion
 
 Well, that's it for week 0! Thanks to the organizers and guest lecturers for walking everyone through these things for free, plus also for all the work that clearly went into the roleplay scenario planning. I'm really looking forward to next week, since I love containers and docker.
