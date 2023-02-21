@@ -2,4 +2,18 @@
 docker/*
 *.db
 
+# Markdown and journaling ignores
+/journal/WIP/*
 
+# Node
+node_modules
+build
+npm-debug.log
+.nyc
+.env
+.DS_Store
+
+# python Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
