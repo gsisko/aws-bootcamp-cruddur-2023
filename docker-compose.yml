@@ -15,9 +15,7 @@ services:
     build: ./frontend-react-js
     ports:
       - "3000:3000"
-    #TODO: this won't work, becuase we need to build the web app when we spin the container up,
-    #we can install it manually, but we can run into issues when porting this stuff, will consider
-    #adding build commands to docker compose
+    #Something is causing this to fail on gitpod
     #volumes:
     #  - ./frontend-react-js:/frontend-react-js
   db:
