@@ -1,4 +1,5 @@
 # Data base dumb file artifacts
+docker/*
 *.db
 
 
