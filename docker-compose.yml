@@ -41,7 +41,7 @@ services:
       - "./docker/dynamodb:/home/dynamodblocal/data"
     working_dir: /home/dynamodblocal
     healthcheck:
-      test: "aws dynamodb list-tables --endpoint-url http://localhost:8000"
+      test: "curl http://localhost:8000"
       interval: 1m30s
       timeout: 30s
       retries: 5
