@@ -14,6 +14,30 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
+
+# AWS X-Ray -------
+#from aws_xray_sdk.core import xray_recorder
+#from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+
+# Rollbar -----
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+
+# HoneyComb -------
+# Initialize tracing and an exporter that can send data to Honeycomb
+provider = TracerProvider()
+processor = BatchSpanProcessor(OTLPSpanExporter())
+provider.add_span_processor(processor)
+trace.set_tracer_provider(provider)
+tracer = trace.get_tracer(__name__)
+
+# CloudWatch Logs -----
+import watchtower
+import logging
+from time import 
+
+
 app = Flask(__name__)
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
