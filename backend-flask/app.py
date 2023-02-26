@@ -27,9 +27,9 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 #from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
 # Rollbar -----
-import rollbar
-import rollbar.contrib.flask
-from flask import got_request_exception
+# import rollbar
+# import rollbar.contrib.flask
+# from flask import got_request_exception
 
 # HoneyComb -------
 # Initialize tracing and an exporter that can send data to Honeycomb
@@ -71,14 +71,14 @@ cors = CORS(
 
 
 # CloudWatch --------
-# Configuring Logger to Use CloudWatch
-LOGGER = logging.getLogger(__name__)
-LOGGER.setLevel(logging.DEBUG)
-console_handler = logging.StreamHandler()
-cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
-LOGGER.addHandler(console_handler)
-LOGGER.addHandler(cw_handler)
-LOGGER.info("some message")
+# # Configuring Logger to Use CloudWatch
+# LOGGER = logging.getLogger(__name__)
+# LOGGER.setLevel(logging.DEBUG)
+# console_handler = logging.StreamHandler()
+# cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+# LOGGER.addHandler(console_handler)
+# LOGGER.addHandler(cw_handler)
+# LOGGER.info("some message")
 
 @app.after_request
 def after_request(response):
