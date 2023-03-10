@@ -42,6 +42,10 @@ const router = createBrowserRouter([
     element: <UserFeedPage />
   },
   {
+    path: "/notifications",
+    element: <NotificationsFeedPage />
+  },
+  {
     path: "/messages",
     element: <MessageGroupsPage />
   },
