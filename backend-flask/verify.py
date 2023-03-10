@@ -20,9 +20,9 @@ import sys
 import os
 
 
-region = xray_url = os.getenv("AWS_DEFAULT_REGION")
-userpool_id = xray_url = os.getenv("COGNITO_USER_POOLS_ID")
-app_client_id = xray_url = os.getenv("COGNITO_WEB_CLIENT_ID")
+region = os.getenv("AWS_DEFAULT_REGION")
+userpool_id = os.getenv("COGNITO_USER_POOLS_ID")
+app_client_id = os.getenv("COGNITO_WEB_CLIENT_ID")
 keys_url = 'https://cognito-idp.{}.amazonaws.com/{}/.well-known/jwks.json'.format(region, userpool_id)
 # instead of re-downloading the public keys every time
 # we download them only on cold start
