@@ -14,6 +14,9 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
+from verify import *
+
+
 # HoneyComb ------
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
@@ -48,6 +51,9 @@ from time import strftime
 
 app = Flask(__name__)
 
+
+
+
 # HoneyComb -------
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
@@ -68,6 +74,20 @@ cors = CORS(
   allow_headers="content-type,if-modified-since",
   methods="OPTIONS,GET,HEAD,POST"
 )
+
+
+# Verify wrapper
+def verify_token(func):
+  '''verify security claims of authorization headers before executing function'''
+  def wrapper():
+    validated_claims = get_claims(request.authorization)
+    if ' ' in validated_claims:
+      func()
+    else:
+      error_output = 'Invalid api call from {} for {}'.format(request.full_path,request.endpoint)
+      print(error_output)
+      #TODO add logging here.
+
 
 @app.after_request
 def after_request(response):
