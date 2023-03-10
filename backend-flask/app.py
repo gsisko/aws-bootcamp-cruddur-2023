@@ -14,7 +14,7 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
-from verify import *
+#from verify import *
 
 
 # HoneyComb ------
@@ -77,16 +77,16 @@ cors = CORS(
 
 
 # Verify wrapper
-def verify_token(func):
-  '''verify security claims of authorization headers before executing function'''
-  def wrapper():
-    validated_claims = get_claims(request.authorization)
-    if ' ' in validated_claims:
-      func()
-    else:
-      error_output = 'Invalid api call from {} for {}'.format(request.full_path,request.endpoint)
-      print(error_output)
-      #TODO add logging here.
+#def verify_token(func):
+#  '''verify security claims of authorization headers before executing function'''
+#  def wrapper():
+#    validated_claims = get_claims(request.authorization)
+#    if ' ' in validated_claims:
+#      func()
+#    else:
+#      error_output = 'Invalid api call from {} for {}'.format(request.full_path,request.endpoint)
+#      print(error_output)
+#      #TODO add logging here.
 
 
 @app.after_request
