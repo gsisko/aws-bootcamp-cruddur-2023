@@ -223,3 +223,6 @@ So, even though JWTs are very fascinating, they can be quite tricky, and there a
 
 Anyway, that is it. It should probably be mentioned in some of the course videos. JWTs are quite complex and people argue over them a lot. It is nice that AWS cognito manages them for you, but you can still get into a lot of trouble.
 
+## Last note
+
+There also seems to be a problem with the app not being signed in for multiple panels, so I will try to fix that by next week. I am pretty sure it is a problem with andrew's github as well. Could be a token thing, I will check and have an answer next week.
