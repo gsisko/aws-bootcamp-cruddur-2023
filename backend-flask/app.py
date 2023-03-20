@@ -70,18 +70,18 @@ origins = [frontend, backend]
 cors = CORS(
   app, 
   resources={r"/api/*": {"origins": origins}},
-  expose_headers="location,link",
+  expose_headers="location,link,Authorization",
   allow_headers="content-type,if-modified-since",
   methods="OPTIONS,GET,HEAD,POST"
 )
 
 
 # Verify wrapper
-#def verify_token(func):
+#def require_access(func):
 #  '''verify security claims of authorization headers before executing function'''
 #  def wrapper():
 #    validated_claims = get_claims(request.authorization)
-#    if ' ' in validated_claims:
+#    if validated_claims['token_use'] == 'access':
 #      func()
 #    else:
 #      error_output = 'Invalid api call from {} for {}'.format(request.full_path,request.endpoint)
