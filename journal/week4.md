@@ -2,9 +2,6 @@
 title: Week 4 Journal
 updated: 2023-03-21 20:31:06Z
 created: 2023-03-20 22:02:41Z
-latitude: 33.44837710
-longitude: -112.07403730
-altitude: 0.0000
 ---
 
 # AWS Free cloud Bootcamp Journal - Week 4
